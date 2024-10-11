@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.magic{
+    background-color: rgb(128, 96, 233);
+    color: white;
+    border: 0;
+    border-radius: 2px;
+    font-size: 14px;
+    padding: 12px 24px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    letter-spacing: 2px;
+    box-shadow: 3px 2px 12px 3px rgba(80,73,273,0.6);
+    z-index: 100;
+}
+
+.magic:focus{
+    outline: none;
+}
+
+.magic:active{
+    box-shadow: none;
+    transform: translateY(2px);
+}
+
+.boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    transition: 0.4s ease-in;
+}
+
+.boxes.big{
+    width: 580px;
+    height: 580px;
+    object-fit: contain;
+}
+
+.boxes.big .box{
+ transform: rotateZ(360deg);
+}
+
+.box{
+    background: url(/1720098492456.jpg);
+    background-repeat: no-repeat;
+    background-size: 500px 500px;
+    height: 125px;
+    width: 125px;
+    position: relative;
+    transition: 0.8s ease;
+}
+.box::after{
+    content: "";
+    background-color: orange;
+    position: absolute;
+    top: 8px;
+    right: -16px;
+    height: 100%;
+    width: 15px;
+    transform: skewY(45deg);
+}
+.box::before{
+    content: "";
+    background-color: rgb(22, 124, 159);
+    position: absolute;
+    bottom: -15px;
+    left: 8px;
+    height: 15px;
+    width: 100%;
+    transform: skewX(45deg);
+}
